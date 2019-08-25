@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{pageTitle}}
+    </ion-title>
+        <ion-icon slot="end" large name="more" (click)="presentPopover($event)"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="generalScreen" padding>
+    <span *ngIf="showPanel" >
+        <ion-card class="cardBackground">
+            <ion-card-header>
+              <ion-card-title>{{welcomeMessage}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        <div>
+            <ion-card class="cardBackground"  *ngFor="let myItem of accountList" >
+                <ion-card-header>
+                  <ion-card-title>Account: {{myItem}}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-chip  (click)="fetchDetails($event, myItem)">
+                        <ion-icon name="eye"></ion-icon>
+                        <ion-label>View Details</ion-label>
+                    </ion-chip>
+                </ion-card-content>
+              </ion-card>
+        </div>
+    </span>
+  </div>
+</ion-content>

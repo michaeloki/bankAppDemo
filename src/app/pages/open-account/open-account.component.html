@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        {{pageTitle}}
+      </ion-title>
+          <ion-icon slot="start" large name="arrow-back" (click)="close()"></ion-icon>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-content >
+    <div class="generalScreen" padding>
+              <ion-card class="cardBackground">
+                  <ion-card-header>
+                    <ion-card-title>Bio Data</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                              <form #bioForm="ngForm" padding>
+                                  <ion-list>
+                                      <ion-item>
+                                        <ion-label floating><ion-icon name="mail"  item-start></ion-icon>Email</ion-label>
+                                        <ion-input type="email" [(ngModel)]="email" id="email" name="email" required placeholder="jack@email.com" text-lowercase aria-describedby="emailHelpInline">
+                                        </ion-input>
+                                      </ion-item>
+                              
+                                      <ion-item>
+                                          <ion-label floating><ion-icon name="key" item-start></ion-icon>Password</ion-label>
+                                          <ion-input type="password"  [(ngModel)]="password" name="password" required placeholder="password"></ion-input>
+                                        </ion-item>        
+                                    </ion-list>
+                                    <ion-list>
+                                        <ion-item>
+                                          <ion-label floating><ion-icon name="person"  item-start></ion-icon>Display Name</ion-label>
+                                          <ion-input type="text" [(ngModel)]="displayName" id="displayName" name="displayName" required placeholder="Jack" text-lowercase aria-describedby="emailHelpInline">
+                                          </ion-input>
+                                        </ion-item>       
+                                      </ion-list>
+                                  </form>
+                                  <div class="ion-padding" >
+                                      <ion-button expand="block" (click)="create()" type="submit" class="ion-no-margin">Continue</ion-button>
+                                    </div>
+                </ion-card-content>
+                
+				  </ion-card>
+    </div>
+  </ion-content>
+  

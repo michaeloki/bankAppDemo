@@ -1,0 +1,7 @@
+{
+  "name": "mySmartBank",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

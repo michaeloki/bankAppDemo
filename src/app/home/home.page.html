@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{loginTitle}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="generalScreen" padding>
+      <ion-card class="loginForm">
+          <ion-card-header>
+            <ion-card-title>{{formTitle}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+              <form #loginForm="ngForm" (ngSubmit)="login()" padding>
+                  <ion-list>
+                      <ion-item>
+                        <ion-label floating><ion-icon name="mail"  item-start></ion-icon>Email</ion-label>
+                        <ion-input type="email" [(ngModel)]="email" id="email" name="email" required placeholder="bob@email.com" text-lowercase aria-describedby="emailHelpInline">
+                        </ion-input>
+                      </ion-item>
+              
+                      <ion-item>
+                          <ion-label floating><ion-icon name="key" item-start></ion-icon>Password</ion-label>
+                          <ion-input type="password"  [(ngModel)]="password" name="password" required placeholder="password"></ion-input>
+                        </ion-item>        
+                    </ion-list>
+                 <!--
+                      <div padding>
+                      <button ion-button  color="primary" block large  type="submit">Login</button> 
+                    </div>-->
+                  </form>
+          </ion-card-content>
+          
+            <div class="ion-padding" *ngIf="showBtn">
+              <ion-button expand="block" (click)="login()" type="submit" class="ion-no-margin">Login</ion-button>
+            </div>
+          
+        </ion-card>
+  </div>
+</ion-content>
